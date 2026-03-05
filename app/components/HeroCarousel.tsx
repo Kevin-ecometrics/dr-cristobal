@@ -3,36 +3,34 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FiChevronLeft, FiChevronRight, FiPause, FiPlay } from 'react-icons/fi';
+import { title } from 'process';
 
 const slides = [
   {
     id: 1,
-    title: 'LA MEJOR ATENCIÓN',
-    subtitle: 'PARA TU SALUD',
-    description: 'EL DR. CRISTÓBAL MENDOZA es especialista dedicado al tratamiento de OÍDOS, NARIZ y GARGANTA. Miembro de la Sociedad Mexicana de Rinología y Cirugía Plástica Facial.',
+    title: 'Otorrinolaringólogo en Colima',
+    subtitle: 'Cuidado Integral de Oído, Nariz y Gargantad',
     buttonText: 'VER MÁS DEL DR. CRISTÓBAL',
-    buttonLink: '/perfil/',
-    image: '/hero1.png',
+    buttonLink: '',
+    image: '/hero7.jpg',
     imageAlt: 'Dr. Cristóbal con paciente'
   },
   {
     id: 2,
-    title: 'CIRUGÍA ESTÉTICA',
-    subtitle: 'Y FUNCIONAL DE NARIZ',
-    description: 'El Dr. Cristóbal Mendoza tiene más de 15 años de experiencia en rinoplastía de vanguardia con técnicas que mejoran tu imagen y tu salud respiratoria.',
+    title: 'Diagnóstico y Tratamiento',
+    subtitle: 'Sordera y Pérdida Auditiva',
     buttonText: 'VER MÁS DE RINOPLASTIA',
-    buttonLink: '/cosmetica-nariz/',
-    image: '/hero2.png',
+    buttonLink: '',
+    image: '/oto1920x1280.jpg',
     imageAlt: 'Rinoplastia'
   },
   {
     id: 3,
-    title: 'ATENCIÓN EN',
-    subtitle: 'COLIMA Y TECOMÁN',
-    description: 'Consulta en dos ubicaciones: Clínica Córdoba en Colima y Unidad de Especialidades Médicas en Tecomán. Atención de calidad cerca de ti.',
+    title: 'Adiós a la Sinusitis Crónica',
+    subtitle: 'Tratamientos para Respirar con Libertad',
     buttonText: 'VER UBICACIONES',
-    buttonLink: '/ubicaciones/',
-    image: '/hero3.png',
+    buttonLink: '',
+    image: '/oto1920x1280.jpg',
     imageAlt: 'Mapa de ubicaciones'
   }
 ];
@@ -74,7 +72,7 @@ const HeroCarousel: React.FC = () => {
 
       interval = setInterval(() => {
         nextSlide();
-      }, 5000);
+      }, 10000);
     }
 
     return () => {
@@ -132,9 +130,10 @@ const HeroCarousel: React.FC = () => {
               
               <div className="w-20 sm:w-24 h-[3px] bg-gradient-to-r from-[#0284c7] via-[#9ac9e8] to-[#0284c7] mx-auto md:mx-0 rounded-full"></div>
               
+              {/* Descripción fija - sin animación de slide */}
               <div className="bg-white/80 backdrop-blur-sm text-gray-700 font-medium p-4 sm:p-5 md:p-6 rounded-2xl max-w-full md:max-w-lg mx-auto md:mx-0 shadow-sm border border-[#e4f4fd]">
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed">
-                  {slides[currentSlide].description}
+                  Respaldado por 27 años de práctica médica, el Dr. Cristóbal Mendoza es experto en salud auditiva y procedimientos quirúrgicos de mínima invasión.
                 </p>
               </div>
 

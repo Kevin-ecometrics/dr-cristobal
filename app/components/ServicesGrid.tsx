@@ -8,51 +8,51 @@ const services = [
     id: 'rinoplastia',
     title: 'RINOPLASTIA',
     description: 'Cirugía cosmética y funcional de nariz',
-    image: '/proce1.jpg',
-    link: '/cosmetica-nariz/',
+    image: '/rino.jpg',
+    link: '',
     delay: 0
   },
   {
     id: 'ronquido',
     title: 'RONQUIDO Y APNEA',
     description: 'Tratamiento para mejorar la calidad del sueño',
-    image: '/proce2.jpg',
-    link: '/apnea-sueno/',
+    image: '/ronquido.jpg',
+    link: '',
     delay: 0.1
   },
   {
     id: 'sinusitis',
     title: 'SINUSITIS',
     description: 'Alivio de infecciones e inflamación sinusal',
-    image: '/proce3.jpg',
-    link: '/sinusitis/',
+    image: '/sinusitis.jpg',
+    link: '',
     delay: 0.2
   },
   {
     id: 'alergias',
     title: 'ALERGIAS',
     description: 'Diagnóstico y tratamiento de alergias',
-    image: '/proce4.jpg',
-    link: '/alergias/',
+    image: '/alergias.jpg',
+    link: '',
     delay: 0.3
   },
   {
     id: 'audicion',
     title: 'PÉRDIDA DE AUDICIÓN',
     description: 'Evaluación y soluciones auditivas',
-    image: '/proce5.jpg',
-    link: '/perdida-audicion/',
+    image: '/perdida-auditiva.jpg',
+    link: '',
     delay: 0.4
   },
   {
     id: 'vertigo',
     title: 'VÉRTIGO Y MAREO',
     description: 'Tratamiento de trastornos del equilibrio',
-    image: '/proce6.jpg',
-    link: '/vertigo-mareo/',
+    image: '/mareo.png',
+    link: '',
     delay: 0.5
   },
-];
+]; 
 
 const ServicesGrid: React.FC = () => {
   return (
@@ -63,14 +63,14 @@ const ServicesGrid: React.FC = () => {
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="text-center mb-16">
           <p className="text-[#0284c7] font-semibold text-sm uppercase tracking-wider mb-3">
-            Especialidades Médicas
+            Atención de primer nivel en Otorrinolaringología en Colima
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-700 mb-4">
             Mis <span className="text-[#0284c7] font-semibold">Servicios</span>
           </h2>
           <div className="w-32 h-1 bg-gradient-to-r from-[#0284c7] via-[#9ac9e8] to-[#0284c7] mx-auto rounded-full"></div>
           <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
-            Atención especializada en Otorrinolaringología con más de 15 años de experiencia
+            Resolución integral de padecimientos de oído, nariz y garganta con estándares de excelencia
           </p>
         </div>
 
