@@ -127,7 +127,7 @@ const AboutSection: React.FC = () => {
           <div className="relative group lg:sticky lg:top-8">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white">
               <img
-                src="/doctor.jpg"
+                src="/cristobal1.jpeg"
                 alt="Dr. Cristóbal Mendoza - Otorrinolaringólogo"
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
