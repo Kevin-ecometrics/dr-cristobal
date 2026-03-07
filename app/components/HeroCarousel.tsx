@@ -1,38 +1,37 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { FiChevronLeft, FiChevronRight, FiPause, FiPlay } from 'react-icons/fi';
-import { title } from 'process';
+import React, { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { FiChevronLeft, FiChevronRight, FiPause, FiPlay } from "react-icons/fi";
 
 const slides = [
   {
     id: 1,
-    title: 'Otorrinolaringólogo en Colima',
-    subtitle: 'Cuidado Integral de Oído, Nariz y Gargantad',
-    buttonText: 'VER MÁS DEL DR. CRISTÓBAL',
-    buttonLink: '',
-    image: '/hero7.jpg',
-    imageAlt: 'Dr. Cristóbal con paciente'
+    title: "Otorrinolaringólogo en Colima",
+    subtitle: "Cuidado Integral de Oído, Nariz y Gargantad",
+    buttonText: "VER MÁS DEL DR. CRISTÓBAL",
+    buttonLink: "",
+    image: "/Cristobal Mendoza Otorrinolaringologo en tecoman colima.png",
+    imageAlt: "Dr. Cristóbal con paciente",
   },
   {
     id: 2,
-    title: 'Diagnóstico y Tratamiento',
-    subtitle: 'Sordera y Pérdida Auditiva',
-    buttonText: 'VER MÁS DE RINOPLASTIA',
-    buttonLink: '',
-    image: '/oto1920x1280.jpg',
-    imageAlt: 'Rinoplastia'
+    title: "Diagnóstico y Tratamiento",
+    subtitle: "Sordera y Pérdida Auditiva",
+    buttonText: "VER MÁS DE RINOPLASTIA",
+    buttonLink: "",
+    image: "/oto1920x1280.jpg",
+    imageAlt: "Rinoplastia",
   },
   {
     id: 3,
-    title: 'Adiós a la Sinusitis Crónica',
-    subtitle: 'Tratamientos para Respirar con Libertad',
-    buttonText: 'VER UBICACIONES',
-    buttonLink: '',
-    image: '/oto1920x1280.jpg',
-    imageAlt: 'Mapa de ubicaciones'
-  }
+    title: "Adiós a la Sinusitis Crónica",
+    subtitle: "Tratamientos para Respirar con Libertad",
+    buttonText: "VER UBICACIONES",
+    buttonLink: "#ubicaciones",
+    image: "/oto1920x1280.jpg",
+    imageAlt: "Mapa de ubicaciones",
+  },
 ];
 
 const HeroCarousel: React.FC = () => {
@@ -84,19 +83,23 @@ const HeroCarousel: React.FC = () => {
   const slideVariants = {
     enter: { opacity: 0 },
     center: { opacity: 1, transition: { duration: 0.7 } },
-    exit: { opacity: 0, transition: { duration: 0.5 } }
+    exit: { opacity: 0, transition: { duration: 0.5 } },
   };
 
   const textVariants = {
     enter: { opacity: 0, y: 40 },
     center: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.15 } },
-    exit: { opacity: 0, y: -20, transition: { duration: 0.5 } }
+    exit: { opacity: 0, y: -20, transition: { duration: 0.5 } },
   };
 
   const imageVariants = {
     enter: { opacity: 0, scale: 0.92 },
-    center: { opacity: 1, scale: 1, transition: { duration: 0.8, delay: 0.25 } },
-    exit: { opacity: 0, scale: 1.1, transition: { duration: 0.6 } }
+    center: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.8, delay: 0.25 },
+    },
+    exit: { opacity: 0, scale: 1.1, transition: { duration: 0.6 } },
   };
 
   return (
@@ -123,27 +126,31 @@ const HeroCarousel: React.FC = () => {
                 {slides[currentSlide].subtitle && (
                   <>
                     <br />
-                    <strong className="text-[#0284c7] font-bold">{slides[currentSlide].subtitle}</strong>
+                    <strong className="text-[#0284c7] font-bold">
+                      {slides[currentSlide].subtitle}
+                    </strong>
                   </>
                 )}
               </h2>
-              
+
               <div className="w-20 sm:w-24 h-[3px] bg-gradient-to-r from-[#0284c7] via-[#9ac9e8] to-[#0284c7] mx-auto md:mx-0 rounded-full"></div>
-              
+
               {/* Descripción fija - sin animación de slide */}
               <div className="bg-white/80 backdrop-blur-sm text-gray-700 font-medium p-4 sm:p-5 md:p-6 rounded-2xl max-w-full md:max-w-lg mx-auto md:mx-0 shadow-sm border border-[#e4f4fd]">
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed">
-                  Respaldado por 27 años de práctica médica, el Dr. Cristóbal Mendoza es experto en salud auditiva y procedimientos quirúrgicos de mínima invasión.
+                  Respaldado por 27 años de práctica médica, el Dr. Cristóbal
+                  Mendoza es experto en salud auditiva y procedimientos
+                  quirúrgicos de mínima invasión.
                 </p>
               </div>
 
-              <a
+              {/* <a
                 href={slides[currentSlide].buttonLink}
                 className="group bg-gradient-to-r from-[#0284c7] to-[#0a5d8c] text-white font-semibold px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-xl hover:from-[#0a5d8c] hover:to-[#0284c7] transition-all duration-300 inline-flex items-center gap-2 sm:gap-3 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 text-sm sm:text-base md:text-lg w-full md:w-auto justify-center"
               >
                 <span>{slides[currentSlide].buttonText}</span>
                 <FiChevronRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+              </a> */}
             </motion.div>
 
             <motion.div
@@ -189,8 +196,8 @@ const HeroCarousel: React.FC = () => {
               onClick={() => goToSlide(index)}
               className={`transition-all duration-300 rounded-full ${
                 currentSlide === index
-                  ? 'w-8 sm:w-10 h-2.5 sm:h-3 bg-[#0284c7] shadow-md'
-                  : 'w-2.5 sm:w-3 h-2.5 sm:h-3 bg-[#c7e6fb] hover:bg-[#9ac9e8] hover:scale-125'
+                  ? "w-8 sm:w-10 h-2.5 sm:h-3 bg-[#0284c7] shadow-md"
+                  : "w-2.5 sm:w-3 h-2.5 sm:h-3 bg-[#c7e6fb] hover:bg-[#9ac9e8] hover:scale-125"
               }`}
               role="tab"
               aria-selected={currentSlide === index}
@@ -202,7 +209,7 @@ const HeroCarousel: React.FC = () => {
         <button
           onClick={() => setIsPlaying(!isPlaying)}
           className="bg-white/90 hover:bg-white rounded-full p-2 sm:p-2.5 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-110 active:scale-95 border border-[#e4f4fd]"
-          aria-label={isPlaying ? 'Pausar carrusel' : 'Reproducir carrusel'}
+          aria-label={isPlaying ? "Pausar carrusel" : "Reproducir carrusel"}
         >
           {isPlaying ? (
             <FiPause className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0284c7]" />
