@@ -1,30 +1,43 @@
 "use client";
 
-import React from "react";
-import { FiUser, FiArrowRight } from "react-icons/fi";
+import React, { useEffect, useState } from "react";
 
 const AboutSection: React.FC = () => {
+  const [yearsExperience, setYearsExperience] = useState(0);
+
+  const countYearsExperience = () => {
+    const currentYear = new Date().getFullYear();
+    return currentYear - 1999;
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setYearsExperience(countYearsExperience());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
   return (
-    <section className="py-16 px-6 bg-gradient-to-b from-[#e4f4fd] to-white">
+    <section className="py-16 px-6 bg-gradient-to-b from-[var(--color-background)] to-white animate-fade-in-up">
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
             <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-700">
                 Conoce al{" "}
-                <span className="text-[#0284c7] font-normal">
+                <span className="text-[var(--color-main)] font-normal">
                   Dr. Cristóbal Mendoza
                 </span>
               </h2>
               <p className="text-gray-600 text-xl mt-2">
-                Otorrinolaringólogo | 27 años restaurando tu bienestar
+                Otorrinolaringólogo | {yearsExperience} años restaurando tu
+                bienestar
               </p>
-              <div className="w-full h-[2px] bg-gradient-to-r from-[#0284c7] via-[#9ac9e8] to-transparent mt-4 rounded-full"></div>
+              <div className="w-full h-[2px] bg-linear-to-r from-[var(--color-main)] via-[var(--color-secondary)] to-transparent mt-4 rounded-full"></div>
             </div>
 
             {/* Formación y Cédulas - ACTUALIZADO al mismo estilo que certificaciones */}
-            <div className="bg-[#0284c7]/5 p-5 rounded-xl border-l-4 border-[#0284c7]">
-              <p className="text-[#0284c7] font-semibold mb-2">
+            <div className="bg-[color-mix(in srgb, var(--color-main) 8%, white)] p-5 rounded-xl border-l-4 border-[var(--color-main)]">
+              <p className="text-[var(--color-main)] font-semibold mb-2">
                 Cédulas profesionales:
               </p>
               <p className="text-gray-700 font-mono text-lg">
@@ -39,25 +52,24 @@ const AboutSection: React.FC = () => {
             {/* Descripción principal - experiencia */}
             <div className="space-y-4 text-gray-600 text-base md:text-lg leading-relaxed">
               <p>
-                Con más de 27 años de experiencia, el Dr. Cristóbal Mendoza ha
-                dedicado su carrera a la actualización constante para ofrecer
-                diagnósticos certeros y tratamientos de vanguardia en el
-                tratamiento de oídos, nariz y garganta, con enfoque en
-                procedimientos mínimamente invasivos, en un ambiente seguro y
-                agradable, dando atención a pacientes de Colima, Jalisco,
-                Michoacán y otros estados.
+                Con más de {yearsExperience} años de experiencia, el Dr.
+                Cristóbal Mendoza ha dedicado su carrera a la actualización
+                constante para ofrecer diagnósticos certeros y tratamientos de
+                vanguardia en el tratamiento de oídos, nariz y garganta, con
+                enfoque en procedimientos mínimamente invasivos, en un ambiente
+                seguro y agradable, dando atención a pacientes de Colima,
+                Jalisco, Michoacán y otros estados.
               </p>
             </div>
 
             {/* Certificaciones */}
-            <div className="bg-[#0284c7]/5 p-5 rounded-xl border-l-4 border-[#0284c7]">
+            <div className="bg-[color-mix(in srgb, var(--color-main) 8%, white)] p-5 rounded-xl border-l-4 border-[var(--color-main)]">
               <p className="text-gray-700">
                 El Dr. Cristóbal Mendoza se encuentra{" "}
-                <span className="font-semibold text-[#0284c7]">
+                <span className="font-semibold text-[var(--color-main)]">
                   certificado por el Consejo Mexicano de Otorrinolaringología y
                   Cirugía de Cabeza y Cuello
                 </span>
-                , y es miembro activo de la Sociedad Mexicana de Rinología.
               </p>
             </div>
 
@@ -68,7 +80,7 @@ const AboutSection: React.FC = () => {
               </h3>
 
               <div>
-                <p className="font-semibold text-[#0284c7] flex items-center gap-2">
+                <p className="font-semibold text-[var(--color-main)] flex items-center gap-2">
                   <span className="text-2xl">·</span> Compromiso y Excelencia:
                 </p>
                 <p className="text-gray-600 pl-6">
@@ -78,7 +90,7 @@ const AboutSection: React.FC = () => {
               </div>
 
               <div>
-                <p className="font-semibold text-[#0284c7] flex items-center gap-2">
+                <p className="font-semibold text-[var(--color-main)] flex items-center gap-2">
                   <span className="text-2xl">·</span> Empatía y Humildad:
                 </p>
                 <p className="text-gray-600 pl-6">
@@ -89,7 +101,7 @@ const AboutSection: React.FC = () => {
               </div>
 
               <div>
-                <p className="font-semibold text-[#0284c7] flex items-center gap-2">
+                <p className="font-semibold text-[var(--color-main)] flex items-center gap-2">
                   <span className="text-2xl">·</span> Honestidad:
                 </p>
                 <p className="text-gray-600 pl-6">
@@ -108,7 +120,7 @@ const AboutSection: React.FC = () => {
               </h3>
 
               <div>
-                <p className="font-semibold text-[#0284c7] flex items-center gap-2">
+                <p className="font-semibold text-[var(--color-main)] flex items-center gap-2">
                   <span className="text-2xl">·</span> Compromiso y Excelencia:
                 </p>
                 <p className="text-gray-600 pl-6">
@@ -118,7 +130,7 @@ const AboutSection: React.FC = () => {
               </div>
 
               <div>
-                <p className="font-semibold text-[#0284c7] flex items-center gap-2">
+                <p className="font-semibold text-[var(--color-main)] flex items-center gap-2">
                   <span className="text-2xl">·</span> Empatía y Humildad:
                 </p>
                 <p className="text-gray-600 pl-6">
@@ -129,7 +141,7 @@ const AboutSection: React.FC = () => {
               </div>
 
               <div>
-                <p className="font-semibold text-[#0284c7] flex items-center gap-2">
+                <p className="font-semibold text-[var(--color-main)] flex items-center gap-2">
                   <span className="text-2xl">·</span> Honestidad:
                 </p>
                 <p className="text-gray-600 pl-6">
@@ -158,7 +170,7 @@ const AboutSection: React.FC = () => {
               </div>   */}
           </div>
 
-          <div className="relative group lg:sticky lg:top-8">
+          <div className="relative group lg:sticky lg:top-8 animate-fade-in-up">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white">
               <img
                 src="/cristobal1.jpeg"
@@ -166,11 +178,13 @@ const AboutSection: React.FC = () => {
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0284c7]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[color-mix(in srgb, var(--color-main) 25%, transparent)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
 
             <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg">
-              <p className="text-[#0284c7] font-bold text-sm">+27 AÑOS</p>
+              <p className="text-[var(--color-main)] font-bold text-sm">
+                + {yearsExperience} AÑOS
+              </p>
               <p className="text-gray-600 text-xs">de experiencia</p>
             </div>
           </div>

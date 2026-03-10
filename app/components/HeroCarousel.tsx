@@ -103,9 +103,9 @@ const HeroCarousel: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-[600px] sm:min-h-[650px] md:min-h-[700px] lg:min-h-[750px] overflow-hidden bg-gradient-to-br from-[#e4f4fd] via-white to-[#e4f4fd]">
-      <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-[#c7e6fb]/40 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-[#c7e6fb]/40 rounded-full blur-3xl"></div>
+    <section className="relative min-h-[600px] sm:min-h-[650px] md:min-h-[700px] lg:min-h-[750px] overflow-hidden bg-linear-to-br from-[var(--color-background)] via-white to-[var(--color-background)]">
+      <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-[color-mix(in srgb,var(--color-secondary) 20%,white)]/40 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-[color-mix(in srgb,var(--color-secondary) 20%,white)]/40 rounded-full blur-3xl"></div>
 
       <AnimatePresence mode="wait">
         <motion.div
@@ -126,17 +126,17 @@ const HeroCarousel: React.FC = () => {
                 {slides[currentSlide].subtitle && (
                   <>
                     <br />
-                    <strong className="text-[#0284c7] font-bold">
+                    <strong className="text-[var(--color-main)] font-bold">
                       {slides[currentSlide].subtitle}
                     </strong>
                   </>
                 )}
               </h2>
 
-              <div className="w-20 sm:w-24 h-[3px] bg-gradient-to-r from-[#0284c7] via-[#9ac9e8] to-[#0284c7] mx-auto md:mx-0 rounded-full"></div>
+              <div className="w-20 sm:w-24 h-[3px] bg-linear-to-r from-[var(--color-main)] via-[var(--color-secondary)] to-[var(--color-main)] mx-auto md:mx-0 rounded-full"></div>
 
               {/* Descripción fija - sin animación de slide */}
-              <div className="bg-white/80 backdrop-blur-sm text-gray-700 font-medium p-4 sm:p-5 md:p-6 rounded-2xl max-w-full md:max-w-lg mx-auto md:mx-0 shadow-sm border border-[#e4f4fd]">
+              <div className="bg-white/80 backdrop-blur-sm text-gray-700 font-medium p-4 sm:p-5 md:p-6 rounded-2xl max-w-full md:max-w-lg mx-auto md:mx-0 shadow-sm border border-[var(--color-background)]">
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed">
                   Respaldado por 27 años de práctica médica, el Dr. Cristóbal
                   Mendoza es experto en salud auditiva y procedimientos
@@ -158,7 +158,7 @@ const HeroCarousel: React.FC = () => {
               className="flex-1 w-full flex justify-center md:justify-end mt-6 md:mt-0"
             >
               <div className="relative max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[450px] w-full">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0284c7]/10 to-[#0a5d8c]/10 rounded-full blur-2xl md:blur-3xl scale-110"></div>
+                <div className="absolute inset-0 bg-linear-to-br from-[color-mix(in srgb,var(--color-main) 20%,transparent)] to-[color-mix(in srgb,var(--color-secondary) 15%,transparent)] rounded-full blur-2xl md:blur-3xl scale-110"></div>
                 <img
                   src={slides[currentSlide].image}
                   alt={slides[currentSlide].imageAlt}
@@ -174,17 +174,17 @@ const HeroCarousel: React.FC = () => {
       <div className="hidden md:flex absolute inset-y-0 left-0 right-0 items-center justify-between px-4 lg:px-8 pointer-events-none z-20">
         <button
           onClick={prevSlide}
-          className="pointer-events-auto bg-white/90 hover:bg-white rounded-full p-3 lg:p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95 group border border-[#e4f4fd]"
+          className="pointer-events-auto bg-white/90 hover:bg-white rounded-full p-3 lg:p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95 group border border-[var(--color-background)]"
           aria-label="Slide anterior"
         >
-          <FiChevronLeft className="w-5 h-5 lg:w-6 lg:h-6 text-[#0284c7] group-hover:text-[#0a5d8c]" />
+          <FiChevronLeft className="w-5 h-5 lg:w-6 lg:h-6 text-[var(--color-main)] group-hover:text-[var(--color-secondary)]" />
         </button>
         <button
           onClick={nextSlide}
-          className="pointer-events-auto bg-white/90 hover:bg-white rounded-full p-3 lg:p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95 group border border-[#e4f4fd]"
+          className="pointer-events-auto bg-white/90 hover:bg-white rounded-full p-3 lg:p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95 group border border-[var(--color-background)]"
           aria-label="Siguiente slide"
         >
-          <FiChevronRight className="w-5 h-5 lg:w-6 lg:h-6 text-[#0284c7] group-hover:text-[#0a5d8c]" />
+          <FiChevronRight className="w-5 h-5 lg:w-6 lg:h-6 text-[var(--color-main)] group-hover:text-[var(--color-secondary)]" />
         </button>
       </div>
 
@@ -196,8 +196,8 @@ const HeroCarousel: React.FC = () => {
               onClick={() => goToSlide(index)}
               className={`transition-all duration-300 rounded-full ${
                 currentSlide === index
-                  ? "w-8 sm:w-10 h-2.5 sm:h-3 bg-[#0284c7] shadow-md"
-                  : "w-2.5 sm:w-3 h-2.5 sm:h-3 bg-[#c7e6fb] hover:bg-[#9ac9e8] hover:scale-125"
+                  ? "w-8 sm:w-10 h-2.5 sm:h-3 bg-[var(--color-main)] shadow-md"
+                  : "w-2.5 sm:w-3 h-2.5 sm:h-3 bg-[var(--color-secondary)]/40 hover:bg-[var(--color-secondary)] hover:scale-125"
               }`}
               role="tab"
               aria-selected={currentSlide === index}
@@ -208,20 +208,20 @@ const HeroCarousel: React.FC = () => {
 
         <button
           onClick={() => setIsPlaying(!isPlaying)}
-          className="bg-white/90 hover:bg-white rounded-full p-2 sm:p-2.5 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-110 active:scale-95 border border-[#e4f4fd]"
+          className="bg-white/90 hover:bg-white rounded-full p-2 sm:p-2.5 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-110 active:scale-95 border border-[var(--color-background)]"
           aria-label={isPlaying ? "Pausar carrusel" : "Reproducir carrusel"}
         >
           {isPlaying ? (
-            <FiPause className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0284c7]" />
+            <FiPause className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[var(--color-main)]" />
           ) : (
-            <FiPlay className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0284c7]" />
+            <FiPlay className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[var(--color-main)]" />
           )}
         </button>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#e4f4fd] z-20">
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-[var(--color-background)] z-20">
         <div
-          className="h-full bg-gradient-to-r from-[#0284c7] via-[#0a5d8c] to-[#0284c7] transition-all duration-100 ease-linear shadow-sm"
+          className="h-full bg-linear-to-r from-[var(--color-main)] via-[var(--color-secondary)] to-[var(--color-main)] transition-all duration-100 ease-linear shadow-sm"
           style={{ width: `${progress}%` }}
         />
       </div>

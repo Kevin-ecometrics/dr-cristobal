@@ -57,7 +57,7 @@ const Modal: React.FC<ModalProps> = ({ id, title, children, isOpen, onClose }) =
         <div className="mt-8 flex justify-end border-t border-gray-200 pt-6">
           <button
             onClick={onClose}
-            className="rounded-lg bg-gradient-to-r from-[#0284c7] to-[#0a5d8c] px-6 py-3 font-semibold text-white transition-colors hover:from-[#0a5d8c] hover:to-[#0284c7]"
+            className="rounded-lg bg-linear-to-r from-[var(--color-main)] to-[var(--color-secondary)] px-6 py-3 font-semibold text-white transition-colors hover:from-[var(--color-secondary)] hover:to-[var(--color-main)]"
           >
             Aceptar
           </button>

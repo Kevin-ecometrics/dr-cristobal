@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import { FiMenu } from "react-icons/fi";
+import React, { useState, useEffect } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
+import { AnimatePresence, motion } from "motion/react";
 
 interface NavbarProps {
   activeSection: string;
@@ -17,25 +18,31 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollToSection }) => {
     { id: "ubicaciones", label: "Ubicaciones" },
   ];
 
-  return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="container mx-auto px-6 py-3 flex justify-between items-center">
-        <div className="flex flex-col">
-          <span className="text-xl font-bold text-[#0284c7]">
-            Dr. Cristóbal Mendoza
-          </span>
-          <span className="text-sm text-gray-600">Otorrinolaringólogo</span>
-        </div>
+  /* Bloquear scroll cuando el menú está abierto */
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
 
+  return (
+    <nav className="bg-white shadow-md sticky top-0 z-40">
+      <div className="container mx-auto px-4 py-2 flex justify-between items-center">
+        {/* LOGO */}
+        <figure className="">
+          <img
+            src="/logo.png"
+            alt="Dr. Cristóbal Mendoza"
+            className="w-full h-24 object-contain"
+          />
+        </figure>
+
+        {/* DESKTOP MENU */}
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`text-gray-700 hover:text-[#0284c7] font-medium transition-colors ${
-                activeSection === item.id
-                  ? "text-[#0284c7] border-b-2 border-[#0284c7]"
-                  : ""
+              className={`relative text-gray-700 hover:text-main font-medium transition-colors after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-main after:transition-all after:duration-300 hover:after:w-full ${
+                activeSection === item.id ? "text-main after:w-full" : ""
               }`}
             >
               {item.label}
@@ -43,33 +50,104 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollToSection }) => {
           ))}
         </div>
 
+        {/* MOBILE BUTTON */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-700 focus:outline-none"
+          className="md:hidden text-gray-700"
           aria-label="Toggle menu"
         >
-          <FiMenu size={22} />
+          {isOpen ? <FiX size={26} /> : <FiMenu size={26} />}
         </button>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 py-4 px-6">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => {
-                scrollToSection(item.id);
-                setIsOpen(false);
-              }}
-              className={`block w-full text-left py-2 text-gray-700 hover:text-[#0284c7] font-medium ${
-                activeSection === item.id ? "text-[#0284c7]" : ""
-              }`}
+      {/* MOBILE MENU */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* OVERLAY */}
+            <motion.div
+              key="overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="fixed inset-0 bg-black/40 z-[998]"
+              onClick={() => setIsOpen(false)}
+            />
+
+            {/* PANEL */}
+            <motion.div
+              key="mobile-menu"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 260, damping: 25 }}
+              className="fixed top-0 right-0 h-screen w-[85%] max-w-sm bg-white z-[999] shadow-xl flex flex-col"
             >
-              {item.label}
-            </button>
-          ))}
-        </div>
-      )}
+              {/* HEADER */}
+              <div className="flex items-center justify-end px-6 py-4 border-b">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  aria-label="Cerrar menú"
+                >
+                  <FiX size={26} />
+                </button>
+              </div>
+
+              {/* LINKS */}
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: { staggerChildren: 0.08 },
+                  },
+                }}
+                className="flex flex-col gap-4 p-6"
+              >
+                {navItems.map((item) => (
+                  <motion.button
+                    key={item.id}
+                    variants={{
+                      hidden: { opacity: 0, x: 20 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
+                    whileTap={{ scale: 0.96 }}
+                    onClick={() => {
+                      scrollToSection(item.id);
+                      setIsOpen(false);
+                    }}
+                    className={`text-left px-4 py-3 rounded-lg text-lg font-semibold transition ${
+                      activeSection === item.id
+                        ? "bg-main text-white"
+                        : "text-gray-700 hover:bg-gray-100"
+                    }`}
+                  >
+                    {item.label}
+                  </motion.button>
+                ))}
+                <footer className="text-center text-gray-600 text-sm mt-4 absolute bottom-10 left-0 right-0">
+                  <p>
+                    &copy; {new Date().getFullYear()}, Dr. Cristóbal Mendoza.
+                    Todos los Derechos Reservados. Sitio por{" "}
+                    <a
+                      href="https://ecommetrica.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[var(--color-main)] hover:text-[var(--color-secondary)] font-semibold transition-colors duration-300"
+                    >
+                      Ecommetrica
+                    </a>
+                  </p>
+                </footer>
+              </motion.div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

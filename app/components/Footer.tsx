@@ -35,8 +35,8 @@ const Footer: React.FC = () => {
 
   const termsContent = (
     <div className="space-y-6 text-black">
-      <div className="bg-[#e4f4fd] p-4 rounded-lg border border-[#9ac9e8]">
-        <p className="font-semibold text-[#0284c7]">
+      <div className="bg-[var(--color-background)] p-4 rounded-lg border border-[var(--color-secondary)]">
+        <p className="font-semibold text-[var(--color-main)]">
           La página de drcristobal.com contiene el contacto directo con nuestro
           personal de atención al cliente.
         </p>
@@ -66,12 +66,12 @@ const Footer: React.FC = () => {
 
   return (
     <>
-      <footer className="bg-gradient-to-b from-white to-[#e4f4fd] py-12 px-6">
+      <footer className="bg-linear-to-b from-white to-[var(--color-background)] py-12 px-6">
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {/* Column 2: Colima Clinic */}
             <div>
-              <h3 className="text-xl font-light text-[#0284c7] mb-4 uppercase tracking-wide">
+              <h3 className="text-xl font-bold text-[var(--color-main)] mb-4 uppercase tracking-wide">
                 COLIMA
               </h3>
               <div className="space-y-3 text-gray-600">
@@ -80,23 +80,23 @@ const Footer: React.FC = () => {
                   href="https://maps.google.com/?q=Zaragoza+377,+Centro,+Tecomán,+Col."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-2 hover:text-[#0284c7] transition-colors group"
+                  className="flex items-start gap-2 hover:text-[var(--color-main)] transition-colors group"
                 >
-                  <FiMapPin className="w-5 h-5 text-[#0284c7] flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
+                  <FiMapPin className="w-5 h-5 text-[var(--color-main)] shrink-0 mt-1 group-hover:scale-110 transition-transform" />
                   <span>Zaragoza #377, Centro</span>
                 </a>
                 <div className="flex items-start gap-2">
-                  <FiPhone className="w-5 h-5 text-[#0284c7] flex-shrink-0 mt-1" />
+                  <FiPhone className="w-5 h-5 text-[var(--color-main)] shrink-0 mt-1" />
                   <div>
                     <a
                       href="tel:3123122121"
-                      className="hover:text-[#0284c7] transition-colors block"
+                      className="hover:text-[var(--color-main)] transition-colors block"
                     >
                       Tels. 312 312 2121
                     </a>
                     <a
                       href="tel:3121320435"
-                      className="text-sm text-[#0284c7] hover:text-[#0a5d8c] transition-colors block"
+                      className="text-sm text-[var(--color-secondary)] hover:text-[var(--color-main)] transition-colors block"
                     >
                       Urgencias 312 132 0435
                     </a>
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
 
             {/* Column 3: Tecomán Clinic */}
             <div>
-              <h3 className="text-xl font-light text-[#0284c7] mb-4 uppercase tracking-wide">
+              <h3 className="text-xl font-bold text-[var(--color-main)] mb-4 uppercase tracking-wide">
                 TECOMÁN
               </h3>
               <div className="space-y-3 text-gray-600">
@@ -118,16 +118,16 @@ const Footer: React.FC = () => {
                   href="https://maps.google.com/?q=18+de+Marzo+113,+Centro,+Tecomán,+Col."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-2 hover:text-[#0284c7] transition-colors group"
+                  className="flex items-start gap-2 hover:text-[var(--color-main)] transition-colors group"
                 >
-                  <FiMapPin className="w-5 h-5 text-[#0284c7] flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
+                  <FiMapPin className="w-5 h-5 text-[var(--color-main)] shrink-0 mt-1 group-hover:scale-110 transition-transform" />
                   <span>18 de Marzo #113, Centro, Tecomán, Col.</span>
                 </a>
                 <div className="flex items-start gap-2">
-                  <FiPhone className="w-5 h-5 text-[#0284c7] flex-shrink-0 mt-1" />
+                  <FiPhone className="w-5 h-5 text-[var(--color-main)] shrink-0 mt-1" />
                   <a
                     href="tel:3133242688"
-                    className="hover:text-[#0284c7] transition-colors"
+                    className="hover:text-[var(--color-main)] transition-colors"
                   >
                     Tel. 313 324 2688
                   </a>
@@ -137,19 +137,26 @@ const Footer: React.FC = () => {
 
             {/* Column 4: Contact */}
             <div>
-              <h3 className="text-xl font-light text-[#0284c7] mb-6 uppercase tracking-wide">
+              <h3 className="text-xl font-bold text-[var(--color-main)] mb-6 uppercase tracking-wide">
                 Contacto
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <FiMail className="w-5 h-5 text-[#0284c7] flex-shrink-0 mt-1" />
+                  <FiMail className="w-5 h-5 text-[var(--color-main)] shrink-0 mt-1" />
                   <a
                     href="mailto:contacto@drcristobal.com"
-                    className="text-gray-600 hover:text-[#0284c7] transition-colors duration-300 break-all"
+                    className="text-gray-600 hover:text-[var(--color-main)] transition-colors duration-300 break-all"
                   >
                     contacto@drcristobal.com
                   </a>
                 </div>
+                <figure>
+                  <img
+                    src="/logo-secondary.png"
+                    alt="Dr. Cristóbal Mendoza"
+                    className="h-24"
+                  />
+                </figure>
                 {/*
                 <div className="pt-4">
                   <a
@@ -164,19 +171,19 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="h-px bg-gradient-to-r from-transparent via-[#9ac9e8] to-transparent my-8"></div>
+          <div className="h-px bg-linear-to-r from-transparent via-[var(--color-secondary)] to-transparent my-8"></div>
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex gap-6">
               <button
                 onClick={() => openModalHandler("privacy")}
-                className="text-sm text-gray-600 hover:text-[#0284c7] transition-colors duration-300"
+                className="text-sm text-gray-600 hover:text-[var(--color-main)] transition-colors duration-300"
               >
                 Política de Privacidad
               </button>
               <button
                 onClick={() => openModalHandler("terms")}
-                className="text-sm text-gray-600 hover:text-[#0284c7] transition-colors duration-300"
+                className="text-sm text-gray-600 hover:text-[var(--color-main)] transition-colors duration-300"
               >
                 Términos y Condiciones
               </button>
@@ -189,7 +196,7 @@ const Footer: React.FC = () => {
                   href="https://ecommetrica.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#0284c7] hover:text-[#0a5d8c] font-semibold transition-colors duration-300"
+                  className="text-[var(--color-main)] hover:text-[var(--color-secondary)] font-semibold transition-colors duration-300"
                 >
                   Ecommetrica
                 </a>
