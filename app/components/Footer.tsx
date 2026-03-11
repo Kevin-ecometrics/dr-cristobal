@@ -161,7 +161,7 @@ const Footer: React.FC = () => {
               <div className="flex items-start">
                 <div className="pt-6">
                   <a
-                    href="mailto:contacto@drcristobal.com"
+                    href="tel:3133242688"
                     className="group inline-flex items-center gap-3 bg-main text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
                   >
                     <span>Agenda tu consulta</span>
