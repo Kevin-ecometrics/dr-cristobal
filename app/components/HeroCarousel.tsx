@@ -20,8 +20,8 @@ const slides = [
     subtitle: "de Sordera y Pérdida Auditiva",
     buttonText: "VER MÁS DE RINOPLASTIA",
     buttonLink: "",
-    image: "/oto1920x1280.jpg",
-    imageAlt: "Rinoplastia",
+    image: "/dr cristobal te ayuda en tu proxima consulta.webp",
+    imageAlt: "Dr. Cristóbal explicando un diagnóstico a paciente",
   },
   {
     id: 3,
@@ -29,8 +29,8 @@ const slides = [
     subtitle: "Adiós a la Sinusitis Crónica",
     buttonText: "VER UBICACIONES",
     buttonLink: "#ubicaciones",
-    image: "/oto1920x1280.jpg",
-    imageAlt: "Mapa de ubicaciones",
+    image: "/dr cristobal te explica los procedimientos para tu nariz.webp",
+    imageAlt: "Dr Cristóbal mostrando un modelo de nariz a paciente",
   },
 ];
 
@@ -163,7 +163,7 @@ const HeroCarousel: React.FC = () => {
                 <img
                   src={slides[currentSlide].image}
                   alt={slides[currentSlide].imageAlt}
-                  className="relative w-full h-auto object-contain drop-shadow-xl transition-transform duration-700 hover:scale-105"
+                  className="relative w-full h-full object-contain drop-shadow-xl transition-transform duration-700 hover:scale-105"
                   loading="eager"
                 />
               </div>
