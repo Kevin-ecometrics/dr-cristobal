@@ -5,7 +5,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Dr. Cristóbal Mendoza - Otorrinolaringólogo",
-  description: "Especialista en oídos, nariz y garganta en Colima y Tecomán",
+  description:
+    "Especialista en oídos, nariz y garganta en Colima y Tecomán. Diagnóstico y tratamiento de problemas auditivos, nasales y de garganta.",
   keywords:
     "otorrinolaringólogo, otologo, rinologist, laringologist, especialista oídos, nariz y garganta, Colima, Tecomán, consulta médica",
   openGraph: {
