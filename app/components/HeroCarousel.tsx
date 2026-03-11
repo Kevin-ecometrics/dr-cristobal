@@ -8,7 +8,7 @@ const slides = [
   {
     id: 1,
     title: "Otorrinolaringólogo en Colima",
-    subtitle: "Cuidado Integral de Oído, Nariz y Gargantad",
+    subtitle: "Cuidado Integral de Oído, Nariz y Garganta",
     buttonText: "VER MÁS DEL DR. CRISTÓBAL",
     buttonLink: "",
     image: "/Cristobal Mendoza Otorrinolaringologo en tecoman colima.png",
@@ -16,8 +16,8 @@ const slides = [
   },
   {
     id: 2,
-    title: "Diagnóstico y Tratamiento",
-    subtitle: "Sordera y Pérdida Auditiva",
+    title: "Diagnóstico y Tratamiento ",
+    subtitle: "de Sordera y Pérdida Auditiva",
     buttonText: "VER MÁS DE RINOPLASTIA",
     buttonLink: "",
     image: "/oto1920x1280.jpg",
@@ -25,8 +25,8 @@ const slides = [
   },
   {
     id: 3,
-    title: "Adiós a la Sinusitis Crónica",
-    subtitle: "Tratamientos para Respirar con Libertad",
+    title: "Tratamientos para Respirar con Libertad",
+    subtitle: "Adiós a la Sinusitis Crónica",
     buttonText: "VER UBICACIONES",
     buttonLink: "#ubicaciones",
     image: "/oto1920x1280.jpg",
@@ -102,6 +102,8 @@ const HeroCarousel: React.FC = () => {
     exit: { opacity: 0, scale: 1.1, transition: { duration: 0.6 } },
   };
 
+  const yearsExperience = new Date().getFullYear() - 1999;
+
   return (
     <section className="relative min-h-[600px] sm:min-h-[650px] md:min-h-[700px] lg:min-h-[750px] overflow-hidden bg-linear-to-br from-[var(--color-background)] via-white to-[var(--color-background)]">
       <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-[color-mix(in srgb,var(--color-secondary) 20%,white)]/40 rounded-full blur-3xl"></div>
@@ -138,9 +140,8 @@ const HeroCarousel: React.FC = () => {
               {/* Descripción fija - sin animación de slide */}
               <div className="bg-white/80 backdrop-blur-sm text-gray-700 font-medium p-4 sm:p-5 md:p-6 rounded-2xl max-w-full md:max-w-lg mx-auto md:mx-0 shadow-sm border border-[var(--color-background)]">
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed">
-                  Respaldado por 27 años de práctica médica, el Dr. Cristóbal
-                  Mendoza es experto en salud auditiva y procedimientos
-                  quirúrgicos de mínima invasión.
+                  {yearsExperience} años de excelencia médica, el Dr. Cristóbal
+                  Mendoza es experto en salud auditiva y cirugía mínima invasiva
                 </p>
               </div>
 

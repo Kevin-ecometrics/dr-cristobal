@@ -22,141 +22,105 @@ const AboutSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
             <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-700">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light ">
                 Conoce al{" "}
-                <span className="text-[var(--color-main)] font-normal">
-                  Dr. Cristóbal Mendoza
-                </span>
+                <span className=" font-normal">Dr. Cristóbal Mendoza</span>
               </h2>
-              <p className="text-gray-600 text-xl mt-2">
+              <p className="text-main font-semibold text-xl mt-2">
                 Otorrinolaringólogo | {yearsExperience} años restaurando tu
                 bienestar
               </p>
               <div className="w-full h-[2px] bg-linear-to-r from-[var(--color-main)] via-[var(--color-secondary)] to-transparent mt-4 rounded-full"></div>
             </div>
 
-            {/* Formación y Cédulas - ACTUALIZADO al mismo estilo que certificaciones */}
-            <div className="bg-[color-mix(in srgb, var(--color-main) 8%, white)] p-5 rounded-xl border-l-4 border-[var(--color-main)]">
-              <p className="text-[var(--color-main)] font-semibold mb-2">
-                Cédulas profesionales:
-              </p>
-              <p className="text-gray-700 font-mono text-lg">
-                1923423 / 0011422
-              </p>
-              <p className="text-gray-600 text-sm mt-2">
+            {/* Formación y Cédulas */}
+            <div className="bg-main p-5 rounded-xl border-l-4 text-white">
+              <div className="flex gap-4 items-center justify-start">
+                <p className=" font-semibold ">Cédulas profesionales:</p>
+                <p className=" font-mono text-lg">1923423 / 0011422</p>
+              </div>
+
+              <p className="text-sm mt-2">
                 Egresado de la Universidad Autónoma de Sinaloa como médico
-                general y especializado en Otorrinolaringología por la UNAM.
+                general y especializado en Otorrinolaringología por la UNAM, el
+                Dr. Mendoza ha dedicado su carrera a la actualización constante
+                para ofrecer diagnósticos certeros y tratamientos de vanguardia.
               </p>
             </div>
 
             {/* Descripción principal - experiencia */}
             <div className="space-y-4 text-gray-600 text-base md:text-lg leading-relaxed">
               <p>
-                Con más de {yearsExperience} años de experiencia, el Dr.
-                Cristóbal Mendoza ha dedicado su carrera a la actualización
-                constante para ofrecer diagnósticos certeros y tratamientos de
-                vanguardia en el tratamiento de oídos, nariz y garganta, con
-                enfoque en procedimientos mínimamente invasivos, en un ambiente
-                seguro y agradable, dando atención a pacientes de Colima,
-                Jalisco, Michoacán y otros estados.
+                <span className="font-bold text-main">
+                  Áreas de Especialidad:
+                </span>{" "}
+                El Dr. Mendoza brinda atención integral en padecimientos de
+                oído, nariz y garganta, destacando en:
               </p>
-            </div>
 
-            {/* Certificaciones */}
-            <div className="bg-[color-mix(in srgb, var(--color-main) 8%, white)] p-5 rounded-xl border-l-4 border-[var(--color-main)]">
-              <p className="text-gray-700">
-                El Dr. Cristóbal Mendoza se encuentra{" "}
-                <span className="font-semibold text-[var(--color-main)]">
-                  certificado por el Consejo Mexicano de Otorrinolaringología y
-                  Cirugía de Cabeza y Cuello
-                </span>
-              </p>
-            </div>
-
-            {/* Áreas de Especialidad */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-gray-800">
-                Valores que Guían su Práctica:
-              </h3>
-
-              <div>
-                <p className="font-semibold text-[var(--color-main)] flex items-center gap-2">
-                  <span className="text-2xl">·</span> Compromiso y Excelencia:
+              <div className="pl-4 space-y-2">
+                <p>
+                  <span className="font-bold text-main">Salud Nasal: </span>
+                  Sinusitis (aguda y crónica), rinitis alérgica y pólipos
+                  nasales.
                 </p>
-                <p className="text-gray-600 pl-6">
-                  Un plan de tratamiento adaptado a tu contexto y necesidades
-                  reales.
+                <p>
+                  <span className="font-bold text-main">
+                    Audición y Equilibrio:{" "}
+                  </span>
+                  Tratamiento de pérdida auditiva en adultos mayores, vértigo
+                  postural, enfermedad de Ménière y acúfenos.
+                </p>
+                <p>
+                  <span className="font-bold text-main">
+                    Garganta y Sueño:{" "}
+                  </span>
+                  Apnea obstructiva del sueño, ronquido, faringitis y trastornos
+                  de la voz.
                 </p>
               </div>
 
-              <div>
-                <p className="font-semibold text-[var(--color-main)] flex items-center gap-2">
-                  <span className="text-2xl">·</span> Empatía y Humildad:
-                </p>
-                <p className="text-gray-600 pl-6">
-                  Un trato cercano donde tu voz es escuchada. El Dr. Mendoza
-                  cree en el trabajo en equipo entre médico y paciente para una
-                  recuperación exitosa.
-                </p>
-              </div>
-
-              <div>
-                <p className="font-semibold text-[var(--color-main)] flex items-center gap-2">
-                  <span className="text-2xl">·</span> Honestidad:
-                </p>
-                <p className="text-gray-600 pl-6">
-                  Transparencia total en cada diagnóstico y alternativa médica.
-                </p>
-              </div>
-              <p className="text-gray-600 italic mt-2">
+              <p className="italic text-gray-600">
                 Su consulta es un espacio seguro, siempre con un enfoque preciso
                 y ético.
               </p>
             </div>
 
+            {/* Valores que Guían su Práctica */}
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-gray-800">
+              <h3 className="text-xl font-semibold text-main">
                 Valores que Guían su Práctica:
               </h3>
 
-              <div>
-                <p className="font-semibold text-[var(--color-main)] flex items-center gap-2">
-                  <span className="text-2xl">·</span> Compromiso y Excelencia:
-                </p>
-                <p className="text-gray-600 pl-6">
-                  Un plan de tratamiento adaptado a tu contexto y necesidades
-                  reales.
-                </p>
-              </div>
+              <div className="space-y-3">
+                <div>
+                  <p className="font-semibold text-main">
+                    Compromiso y Excelencia:
+                  </p>
+                  <p className="text-gray-600 pl-4">
+                    Un plan de tratamiento adaptado a tu contexto y necesidades
+                    reales.
+                  </p>
+                </div>
 
-              <div>
-                <p className="font-semibold text-[var(--color-main)] flex items-center gap-2">
-                  <span className="text-2xl">·</span> Empatía y Humildad:
-                </p>
-                <p className="text-gray-600 pl-6">
-                  Un trato cercano donde tu voz es escuchada. El Dr. Mendoza
-                  cree en el trabajo en equipo entre médico y paciente para una
-                  recuperación exitosa.
-                </p>
-              </div>
+                <div>
+                  <p className="font-semibold text-main">Empatía y Humildad:</p>
+                  <p className="text-gray-600 pl-4">
+                    Un trato cercano donde tu voz es escuchada. El Dr. Mendoza
+                    cree en el trabajo en equipo entre médico y paciente para
+                    una recuperación exitosa.
+                  </p>
+                </div>
 
-              <div>
-                <p className="font-semibold text-[var(--color-main)] flex items-center gap-2">
-                  <span className="text-2xl">·</span> Honestidad:
-                </p>
-                <p className="text-gray-600 pl-6">
-                  Transparencia total en cada diagnóstico y alternativa médica.
-                </p>
+                <div>
+                  <p className="font-semibold text-main">Honestidad:</p>
+                  <p className="text-gray-600 pl-4">
+                    Transparencia total en cada diagnóstico y alternativa
+                    médica.
+                  </p>
+                </div>
               </div>
             </div>
-
-            {/* Reputación */}
-            <p className="text-gray-600 text-base md:text-lg leading-relaxed border-t border-gray-200 pt-4">
-              Ha desarrollado la reputación de ofrecer una atención médica
-              excepcional a cada uno de sus pacientes, basando su práctica en la
-              honestidad, integridad y dedicación a la excelencia en la
-              Otorrinolaringología.
-            </p>
 
             {/* <div className="pt-6">
                 <a
@@ -182,9 +146,7 @@ const AboutSection: React.FC = () => {
             </div>
 
             <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg">
-              <p className="text-[var(--color-main)] font-bold text-sm">
-                + {yearsExperience} AÑOS
-              </p>
+              <p className=" font-bold text-sm">+ {yearsExperience} AÑOS</p>
               <p className="text-gray-600 text-xs">de experiencia</p>
             </div>
           </div>
