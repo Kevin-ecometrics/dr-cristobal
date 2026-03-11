@@ -1,7 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+import {
+  FiPhone,
+  FiMail,
+  FiMapPin,
+  FiUser,
+  FiArrowRight,
+} from "react-icons/fi";
 import Image from "next/image";
 import Modal from "./Modal";
 
@@ -14,9 +20,18 @@ const Footer: React.FC = () => {
   const privacyContent = (
     <div className="space-y-4 text-black">
       <p>
-        En drcristobal.com accesible desde https://drcristobal.com/, tu
-        privacidad es una prioridad. Esta Política de Privacidad explica qué
-        información recopilamos, cómo la usamos y tus derechos sobre tus datos.
+        En{" "}
+        <a
+          href="https://drcristobal.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-main font-bold "
+        >
+          Dr. Cristóbal
+        </a>{" "}
+        accesible desde https://drcristobal.com/, tu privacidad es una
+        prioridad. Esta Política de Privacidad explica qué información
+        recopilamos, cómo la usamos y tus derechos sobre tus datos.
       </p>
       <h3 className="text-xl font-bold text-gray-800 mt-6">
         Información que Recopilamos:
@@ -70,15 +85,8 @@ const Footer: React.FC = () => {
       <footer className="bg-linear-to-b from-white to-background py-12 px-6">
         <div className="container mx-auto max-w-7xl">
           {/* Logo Section */}
-          <div className="flex justify-center mb-12">
-            <img
-              src="/logo-secondary.png"
-              alt="Dr. Cristóbal Mendoza"
-              className="size-24"
-            />
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             {/* Column 1: Colima Clinic */}
             <div>
               <h3 className="text-xl font-bold text-main mb-4 uppercase tracking-wide">
@@ -147,17 +155,27 @@ const Footer: React.FC = () => {
 
             {/* Column 3: Contact */}
             <div>
-              <h3 className="text-xl font-bold text-main mb-4 uppercase tracking-wide">
+              <h3 className="text-xl font-bold text-main uppercase tracking-wide">
                 Contacto
               </h3>
-              <div className="flex items-start gap-3">
-                <FiMail className="w-5 h-5 text-main shrink-0 mt-1" />
-                <a
-                  href="mailto:contacto@drcristobal.com"
-                  className="text-gray-600 hover:text-main transition-colors duration-300 break-all"
-                >
-                  contacto@drcristobal.com
-                </a>
+              <div className="flex items-start">
+                <div className="pt-6">
+                  <a
+                    href="mailto:contacto@drcristobal.com"
+                    className="group inline-flex items-center gap-3 bg-main text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
+                  >
+                    <span>Agenda tu consulta</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div>
+                <img
+                  src="/logo-secondary.png"
+                  alt="Dr. Cristóbal Mendoza"
+                  className="size-24"
+                />
               </div>
             </div>
           </div>

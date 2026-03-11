@@ -48,6 +48,16 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollToSection }) => {
               {item.label}
             </button>
           ))}
+          <div className="flex items-center mb-4">
+            <div className="pt-6">
+              <a
+                href="tel:3133242688"
+                className="group inline-flex items-center bg-main text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
+              >
+                <span>Contacto</span>
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* MOBILE BUTTON */}
@@ -129,6 +139,20 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollToSection }) => {
                     {item.label}
                   </motion.button>
                 ))}
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, x: 20 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                  className="mt-2"
+                >
+                  <a
+                    href="tel:3133242688"
+                    className="group flex items-center justify-center bg-main text-white font-semibold py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 w-full"
+                  >
+                    <span>Contacto</span>
+                  </a>
+                </motion.div>
                 <footer className="text-center text-gray-600 text-sm mt-4 absolute bottom-10 left-0 right-0">
                   <p>
                     &copy; {new Date().getFullYear()}, Dr. Cristóbal Mendoza.
@@ -137,7 +161,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollToSection }) => {
                       href="https://ecommetrica.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[var(--color-main)] hover:text-[var(--color-secondary)] font-semibold transition-colors duration-300"
+                      className="text-main hover:text-secondary font-semibold transition-colors duration-300"
                     >
                       Ecommetrica
                     </a>

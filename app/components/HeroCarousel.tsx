@@ -11,7 +11,7 @@ const slides = [
     subtitle: "Cuidado Integral de Oído, Nariz y Garganta",
     buttonText: "VER MÁS DEL DR. CRISTÓBAL",
     buttonLink: "",
-    image: "/Cristobal Mendoza Otorrinolaringologo en tecoman colima.png",
+    image: "/dr cristobal te ayuda en tu proxima consulta.webp",
     imageAlt: "Dr. Cristóbal con paciente",
   },
   {
@@ -20,7 +20,7 @@ const slides = [
     subtitle: "de Sordera y Pérdida Auditiva",
     buttonText: "VER MÁS DE RINOPLASTIA",
     buttonLink: "",
-    image: "/dr cristobal te ayuda en tu proxima consulta.webp",
+    image: "/Cristobal Mendoza Otorrinolaringologo en tecoman colima.png",
     imageAlt: "Dr. Cristóbal explicando un diagnóstico a paciente",
   },
   {
